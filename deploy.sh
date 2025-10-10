@@ -1,0 +1,1 @@
+scp -r index.html lschmoigl@data-science.wifo.ac.at:/home/lschmoigl/datascience/htdocs/lecture-template
