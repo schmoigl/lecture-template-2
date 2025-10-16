@@ -1,3 +1,3 @@
 library(tidyverse)
 
-iris <- read_csv("data/iris.csv")
+data <- read_csv("data/cases.csv")
