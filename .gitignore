@@ -2,3 +2,4 @@ data/
 *.txt
 /.quarto/
 /website/
+**/*.quarto_ipynb

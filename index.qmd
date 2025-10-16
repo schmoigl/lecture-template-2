@@ -3,11 +3,11 @@ title: "Template Quarto"
 author: "Course"
 project: 
     type: website
-    directory: website
+    output-dir: website
+    preview: 
+        port: 2222
     render:
         - index.qmd
-# preview: 
-#     port: 2222
 format: 
     html:
         page-layout: article
