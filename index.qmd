@@ -1,6 +1,6 @@
 ---
-title: "Template Quarto"
-author: "Course"
+title: "Quarto Template"
+author: "Data Science and Machine Learning Class"
 project: 
     type: website
     output-dir: website
@@ -11,7 +11,7 @@ project:
 format: 
     html:
         page-layout: article
-        theme: [darkly]
+        theme: [cosmo, style.scss]
 ---
 
 Whatever content
