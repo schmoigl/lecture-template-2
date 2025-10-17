@@ -1,17 +1,6 @@
 ---
 title: "Quarto Template"
 author: "Data Science and Machine Learning Class"
-project: 
-    type: website
-    output-dir: website
-    preview: 
-        port: 2222
-    render:
-        - index.qmd
-format: 
-    html:
-        page-layout: article
-        theme: [cosmo, style.scss]
 ---
 
 Whatever content
