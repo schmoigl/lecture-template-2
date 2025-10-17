@@ -1,5 +1,15 @@
 /*-- scss:defaults --*/
-
+$font-family-base: "Century Gothic", sans-serif;
 
 
 /*-- scss:rules --*/
+
+.myLink {
+    text-decoration: none;
+    color: green;
+}
+
+.myLink:hover {
+    text-decoration: underline;
+    color: darkgreen;
+}
