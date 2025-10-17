@@ -4,3 +4,7 @@ author: "Data Science and Machine Learning Class"
 ---
 
 Whatever content
+
+New content
+
+[Link Text](https://wifo.ac.at){target="_blank" .myLink}
