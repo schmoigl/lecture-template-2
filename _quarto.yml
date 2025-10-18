@@ -7,6 +7,14 @@ project:
         port: 2222
     render:
         - index.qmd
+        - about.qmd
+website:
+    navbar:
+        left:
+            - text: "Home"
+              href: index.qmd
+            - text: "Koens Page"
+              href: about.qmd
 format: 
     html:
         page-layout: article
