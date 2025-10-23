@@ -6,6 +6,8 @@ author: "Data Science and Machine Learning Class"
 
 # Headline 1
 
+## Headline 2
+
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores e
 
 ```{r}
@@ -18,6 +20,8 @@ library(kableExtra)
 data <- read_csv("data/cases.csv")
 ```
 
+::: {.column-screen-inset}
+
 ```{r}
 #| output: true
 #| echo: true
@@ -25,6 +29,28 @@ data <- read_csv("data/cases.csv")
 
 data |> filter(row_number()<=10) |> kable("html")
 ```
+
+:::
+
+::: {.imageContainer }
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.  
+
+
+Duis autem vel eum iriure dolor in
+
+[Link Text](https://wifo.ac.at){target="_blank" .myLink}
+
+![WU logo inside .imageContainer](img/wu.svg){fig-align="left" .myLogo .defaultLogo}
+
+:::
+
+![WU logo outside .imageContainer](img/wu.svg){fig-align="left" .myLogo .defaultLogo}
+
+
+## Interactivity in Quarto Notebooks
+
+This is an example of how you can control this pages output with stuff that happens in your data in your R code:
 
 ```{r}
 #| output: true
@@ -48,40 +74,13 @@ plot_data <- data |>
 selectYear <- 2010
 
 favoriten <- plot_data |> filter(year == selectYear & region == "BG Favoriten") |> pull()
-
 innere <- plot_data |> filter(year == selectYear & region == "BG Innere Stadt Wien") |> pull()
 
 color <- ifelse(favoriten > innere, "red", "green")
 word <- ifelse(favoriten > innere, "more", "less")
 ```
 
-The number of cases in Favoriten in `{r} selectYear` was `{r} favoriten`, while in Innere Stadt it was `{r} innere`. 
-
-So the number in Favoriten is <span style="color:`{r} color`;"> `{r} word` </span>
-
-
-::: {.column-screen-inset}
-[Link Text](https://wifo.ac.at){target="_blank" .myLink}
-
+The number of cases in Favoriten in `{r} selectYear` was `{r} favoriten`, while in Innere Stadt it was `{r} innere`. So the number in Favoriten was <span style="color:`{r} color`;"> `{r} word` </span>.
 
 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
 
-At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-
-:::
-
-::: {.imageContainer }
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.  
-
-Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
-
-Duis autem vel eum iriure dolor in
-
-[Link Text](https://wifo.ac.at){target="_blank" .myLink}
-
-![WU logo](img/wu.svg){fig-align="left" .myLogo .defaultLogo}
-
-:::
-
-![WU logo](img/wu.svg){fig-align="left" .myLogo .defaultLogo}

@@ -13,7 +13,7 @@ website:
         left:
             - text: "Home"
               href: index.qmd
-            - text: "Koens Page"
+            - text: "Koen's Page"
               href: about.qmd
 format: 
     html:
