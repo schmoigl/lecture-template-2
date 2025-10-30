@@ -1,6 +1,7 @@
 ---
 title: "Quarto Template"
 author: "Data Science and Machine Learning Class"
+bibliography: src/reference.bib
 ---
 
 
@@ -11,10 +12,12 @@ author: "Data Science and Machine Learning Class"
 
 ::: {.imageContainer }
 
+I read this in [@wickham2016data]
+
 You can consult [this site](https://quarto.org/docs/authoring/markdown-basics.html){targe="_blank"} for some info about basic markdown usage in Quarto. Anyway here is some stuff:
 
 ```markdown
-[Link Text](https://wifo.ac.at){target="_blank" .myLink}
+[Link Text](https://wifo.ac.at){target="_blank" .myLink #link1}
 ```
 
 [Link Text](https://wifo.ac.at){target="_blank" .myLink}
@@ -41,6 +44,17 @@ Note that we can also do the same stuff we do in basic markdown with some html:
 
 <a href="https://wifo.ac.at" target="_blank" class="myLink">Link Text</a>
 
+::: {.hugeLink}
+
+<a href="https://wifo.ac.at" class="myLink">Here is a link to WIFO</a>
+
+:::
+
+<a href="https://wifo.ac.at" class="myLink">Here is a link to WIFO</a>
+
+$$
+\sum_{i=1}^{n} 
+$$
 
 ## Code Chunks
 
@@ -99,9 +113,34 @@ innere <- plot_data |> filter(year == selectYear & region == "BG Innere Stadt Wi
 
 color <- ifelse(favoriten > innere, "red", "green")
 word <- ifelse(favoriten > innere, "more", "less")
+
+write_csv(plot_data, "data/plot_data.csv")
 ```
 
 The number of cases in Favoriten in `{r} selectYear` was `{r} favoriten`, while in Innere Stadt it was `{r} innere`. So the number in Favoriten was <span style="color:`{r} color`;"> `{r} word` </span>.
 
 Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
 
+```{ojs}
+//| echo: false
+plot_data = FileAttachment("data/plot_data.csv").csv()
+
+viewof selectYear = Inputs.range(
+    [2007, 2012],
+    {step: 1}
+)
+
+vl.markBar()
+    .encode(
+        vl.x().fieldN("region").axis({ title: null }),
+        vl.y().fieldQ("n").axis({ title: null }).scale({ domain: [0, 200] }),
+        vl.color().fieldN("region").legend({ title: null }),
+    )
+    .data(plot_data.filter(d => d.year == selectYear))
+    .width((width/2)-100)
+    .height(300)
+    .render()
+
+width
+
+```

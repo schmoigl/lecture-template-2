@@ -14,8 +14,17 @@ $font-family-base: "Century Gothic", sans-serif;
     color: darkgreen;
 }
 
+#link1 {
+    font-size: 18px;
+}
+
+.hugeLink a {
+    font-size: 40px;
+}
+
 .imageContainer .myLogo {
-    width: 200px 
+    width: 200px;
+    height: auto;
 }
 
 .myLogo {
